@@ -1,52 +1,21 @@
-.DS_Store
-.atom/
-.idea/
-.vscode/
+# ignore everything (dirs, files, sub-dirs, sub-files)
+/*
+# but do not ignore the .gitignore file
+!.gitignore
 
-.packages
-.pub/
-.dart_tool/
-pubspec.lock
-flutter_export_environment.sh
+# do not ignore fish dir (needed due to the above bullet point)
+!/packages
+# ignore files and sub dirs in the /fish directory
+/packages/*
+# but do not ignore the config.fish file
+!/packages/camera
 
-examples/all_plugins/pubspec.yaml
+# ignore file and sub dirs in the /packages/camera/ directory
+/packages/camera/*
 
-Podfile.lock
-Pods/
-.symlinks/
-**/Flutter/App.framework/
-**/Flutter/ephemeral/
-**/Flutter/Flutter.podspec
-**/Flutter/Flutter.framework/
-**/Flutter/Generated.xcconfig
-**/Flutter/flutter_assets/
-
-ServiceDefinitions.json
-xcuserdata/
-**/DerivedData/
-
-local.properties
-keystore.properties
-.gradle/
-gradlew
-gradlew.bat
-gradle-wrapper.jar
-.flutter-plugins-dependencies
-*.iml
-
-generated_plugin_registrant.cc
-generated_plugin_registrant.h
-generated_plugin_registrant.dart
-GeneratedPluginRegistrant.java
-GeneratedPluginRegistrant.h
-GeneratedPluginRegistrant.m
-GeneratedPluginRegistrant.swift
-build/
-.flutter-plugins
-
-.project
-.classpath
-.settings
-
-# Downloaded by the plugin tools.
-google-java-format-1.3-all-deps.jar
+# but do not ignore following directories
+!/packages/camera/camera
+!/packages/camera/camera_android
+!/packages/camera/camera_android_camerax
+!/packages/camera/camera_avfoundation
+!/packages/camera/camera_platform_interface
