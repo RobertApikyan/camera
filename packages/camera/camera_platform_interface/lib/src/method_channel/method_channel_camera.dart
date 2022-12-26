@@ -76,6 +76,11 @@ class MethodChannelCamera extends CameraPlatform {
           lensDirection:
               parseCameraLensDirection(camera['lensFacing']! as String),
           sensorOrientation: camera['sensorOrientation']! as int,
+          minimumFocusDistance: camera['minimumFocusDistance'] as int?,
+          viewOfFieldHorizontalAngle:
+              camera['viewOfFieldHorizontalAngle'] as double?,
+          viewOfFieldVerticalAngle:
+              camera['viewOfFieldVerticalAngle'] as double?,
         );
       }).toList();
     } on PlatformException catch (e) {

@@ -24,6 +24,9 @@ class CameraDescription {
     required this.name,
     required this.lensDirection,
     required this.sensorOrientation,
+    required this.minimumFocusDistance,
+    required this.viewOfFieldHorizontalAngle,
+    required this.viewOfFieldVerticalAngle,
   });
 
   /// The name of the camera device.
@@ -40,6 +43,14 @@ class CameraDescription {
   /// On Android, also defines the direction of rolling shutter readout, which
   /// is from top to bottom in the sensor's coordinate system.
   final int sensorOrientation;
+
+  // Shortest distance from surface to the lens that can be brought into sharp focus.
+  final int? minimumFocusDistance;
+
+  // The angle of visibility field for camera
+  final double? viewOfFieldHorizontalAngle;
+  final double? viewOfFieldVerticalAngle;
+
 
   @override
   bool operator ==(Object other) =>

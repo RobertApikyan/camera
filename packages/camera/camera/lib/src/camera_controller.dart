@@ -811,12 +811,13 @@ class CameraController extends ValueNotifier<CameraValue> {
         '$functionName() was called on an uninitialized CameraController.',
       );
     }
-    if (_isDisposed) {
-      throw CameraException(
-        'Disposed CameraController',
-        '$functionName() was called on a disposed CameraController.',
-      );
-    }
+    // TODO CAMERA_FIX
+    // if (_isDisposed) {
+    //   throw CameraException(
+    //     'Disposed CameraController',
+    //     '$functionName() was called on a disposed CameraController.',
+    //   );
+    // }
   }
 
   @override
