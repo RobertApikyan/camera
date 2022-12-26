@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="548b622b-8743-4682-88c5-5a95dd23abad" name="Changes" comment="" />
+    <list default="true" id="548b622b-8743-4682-88c5-5a95dd23abad" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/camera.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/camera.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

@@ -250,6 +250,7 @@ class CameraController extends ValueNotifier<CameraValue> {
   static const int kUninitializedCameraId = -1;
   int _cameraId = kUninitializedCameraId;
 
+  bool get isDisposed => _isDisposed;
   bool _isDisposed = false;
   StreamSubscription<CameraImageData>? _imageStreamSubscription;
   FutureOr<bool>? _initCalled;
