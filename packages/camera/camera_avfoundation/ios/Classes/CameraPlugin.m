@@ -131,11 +131,28 @@
             lensFacing = @"external";
             break;
         }
-        [reply addObject:@{
-          @"name" : [device uniqueID],
-          @"lensFacing" : lensFacing,
-          @"sensorOrientation" : @90,
-        }];
+        // TODO CAMERA_FIX -start
+          if (@available(iOS 15, *)) {
+                      [reply addObject:@{
+                              @"name" : [device uniqueID],
+                              @"lensFacing" : lensFacing,
+                              @"sensorOrientation" : @90,
+                              @"minimumFocusDistance" : [NSNumber numberWithInt:device.minimumFocusDistance],
+                              @"viewOfFieldHorizontalAngle" : [NSNumber numberWithFloat:device.activeFormat.videoFieldOfView],
+                              @"viewOfFieldVerticalAngle" : [NSNumber numberWithFloat:device.activeFormat.videoFieldOfView],
+                            }];
+                    // Use iOS 11 APIs.
+                } else {
+                    // Alternative code for earlier versions of iOS.
+                    [reply addObject:@{
+                              @"name" : [device uniqueID],
+                              @"lensFacing" : lensFacing,
+                              @"sensorOrientation" : @90,
+                              @"viewOfFieldHorizontalAngle" : [NSNumber numberWithFloat:device.activeFormat.videoFieldOfView],
+                              @"viewOfFieldVerticalAngle" : [NSNumber numberWithFloat:device.activeFormat.videoFieldOfView],
+                            }];
+                }
+          // TODO CAMERA_FIX -end
       }
       [result sendSuccessWithData:reply];
     } else {

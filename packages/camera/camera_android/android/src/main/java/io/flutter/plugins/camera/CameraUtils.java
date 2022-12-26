@@ -10,6 +10,8 @@ import android.hardware.camera2.CameraAccessException;
 import android.hardware.camera2.CameraCharacteristics;
 import android.hardware.camera2.CameraManager;
 import android.hardware.camera2.CameraMetadata;
+import android.util.SizeF;
+
 import io.flutter.embedding.engine.systemchannels.PlatformChannel;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -112,6 +114,22 @@ public final class CameraUtils {
       details.put("name", cameraName);
       int sensorOrientation = characteristics.get(CameraCharacteristics.SENSOR_ORIENTATION);
       details.put("sensorOrientation", sensorOrientation);
+      // TODO CAMERA_FIX -start adding minimumFocusDistance, viewOfFieldHorizontalAngle, viewOfFieldVerticalAngle
+      details.put("minimumFocusDistance", (int)(1000 / characteristics.get(CameraCharacteristics.LENS_INFO_MINIMUM_FOCUS_DISTANCE)));
+
+      final float[] focalLengths = characteristics.get(CameraCharacteristics.LENS_INFO_AVAILABLE_FOCAL_LENGTHS);
+      final SizeF sensorSize = characteristics.get(CameraCharacteristics.SENSOR_INFO_PHYSICAL_SIZE);
+      if (focalLengths != null && focalLengths.length > 0 && sensorSize != null) {
+        float focalLength = focalLengths[0];
+        double horizontalAngle = (2f * Math.atan((double) (sensorSize.getWidth() / (focalLength * 2f)))) * 180.0 / Math.PI;
+        double verticalAngle = (2f * Math.atan((double) (sensorSize.getHeight() / (focalLength * 2f)))) * 180.0 / Math.PI;
+        details.put("viewOfFieldHorizontalAngle", horizontalAngle);
+        details.put("viewOfFieldVerticalAngle", verticalAngle);
+      } else {
+        details.put("viewOfFieldHorizontalAngle", 0.0);
+        details.put("viewOfFieldVerticalAngle", 0.0);
+      }
+      // TODO CAMERA_FIX -end
 
       int lensFacing = characteristics.get(CameraCharacteristics.LENS_FACING);
       switch (lensFacing) {

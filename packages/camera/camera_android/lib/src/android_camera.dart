@@ -84,6 +84,11 @@ class AndroidCamera extends CameraPlatform {
           lensDirection:
               parseCameraLensDirection(camera['lensFacing']! as String),
           sensorOrientation: camera['sensorOrientation']! as int,
+          // TODO CAMERA_FIX -start
+          minimumFocusDistance: camera['minimumFocusDistance'] as int?,
+          viewOfFieldHorizontalAngle: camera['viewOfFieldHorizontalAngle'] as double?,
+          viewOfFieldVerticalAngle: camera['viewOfFieldVerticalAngle'] as double?,
+          // TODO CAMERA_FIX -end
         );
       }).toList();
     } on PlatformException catch (e) {
