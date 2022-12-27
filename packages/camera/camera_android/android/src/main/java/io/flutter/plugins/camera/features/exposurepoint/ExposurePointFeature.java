@@ -8,6 +8,9 @@ import android.hardware.camera2.CaptureRequest;
 import android.hardware.camera2.params.MeteringRectangle;
 import android.util.Size;
 import androidx.annotation.NonNull;
+
+import java.util.Arrays;
+
 import io.flutter.embedding.engine.systemchannels.PlatformChannel;
 import io.flutter.plugins.camera.CameraProperties;
 import io.flutter.plugins.camera.CameraRegionUtils;
@@ -67,15 +70,44 @@ public class ExposurePointFeature extends CameraFeature<Point> {
     return supportedRegions != null && supportedRegions > 0;
   }
 
+//  TODO CAMERA_FIX - start
+//  @Override
+//  public void updateBuilder(CaptureRequest.Builder requestBuilder) {
+//    if (!checkIsSupported()) {
+//      return;
+//    }
+//    requestBuilder.set(
+//        CaptureRequest.CONTROL_AE_REGIONS,
+//        exposureRectangle == null ? null : new MeteringRectangle[] {exposureRectangle});
+//  }
+
+  private MeteringRectangle[] defaultExposureRectangle;
+
+  private boolean shouldReset(CaptureRequest.Builder requestBuilder) {
+    MeteringRectangle[] currentRectangles = requestBuilder.get(CaptureRequest.CONTROL_AE_REGIONS);
+    return !Arrays.equals(currentRectangles, defaultExposureRectangle);
+  }
+
   @Override
   public void updateBuilder(CaptureRequest.Builder requestBuilder) {
     if (!checkIsSupported()) {
       return;
     }
-    requestBuilder.set(
-        CaptureRequest.CONTROL_AE_REGIONS,
-        exposureRectangle == null ? null : new MeteringRectangle[] {exposureRectangle});
+
+    if (defaultExposureRectangle == null) {
+      defaultExposureRectangle = requestBuilder.get(CaptureRequest.CONTROL_AE_REGIONS);
+    }
+
+    MeteringRectangle newRectangle = exposureRectangle;
+
+    if (newRectangle != null) {
+      requestBuilder.set(CaptureRequest.CONTROL_AE_REGIONS, new MeteringRectangle[] {newRectangle});
+    } else if (shouldReset(requestBuilder)) {
+      requestBuilder.set(CaptureRequest.CONTROL_AE_REGIONS, defaultExposureRectangle);
+    }
+    android.util.Log.d("ExposurePointFeature","ExposurePointFeature::updateBuilder");
   }
+
 
   private void buildExposureRectangle() {
     if (this.cameraBoundaries == null) {
