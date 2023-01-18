@@ -5,8 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="548b622b-8743-4682-88c5-5a95dd23abad" name="Changes" comment="added isDispose">
+      <change afterPath="$PROJECT_DIR$/../camera_android_camerax/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../camera_android_camerax/.idea/libraries/Dart_SDK.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../camera_android_camerax/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../camera_android_camerax/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../camera_android_camerax/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config_subset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/version" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/camera_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/camera_controller.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../camera_android/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../camera_android/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../camera_avfoundation/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../camera_avfoundation/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

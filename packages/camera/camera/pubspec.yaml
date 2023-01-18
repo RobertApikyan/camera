@@ -23,16 +23,19 @@ flutter:
 dependencies:
   camera_android:
     git:
-      url: https://github.com/RobertApikyan/camera.git
+      url: https://buildserver.qundo.de:8929/qundo-app-development/app-camera-library.git
       path: packages/camera/camera_android
+      ref: 0.10.1
   camera_avfoundation:
     git:
-      url: https://github.com/RobertApikyan/camera.git
+      url: https://buildserver.qundo.de:8929/qundo-app-development/app-camera-library.git
       path: packages/camera/camera_avfoundation
+      ref: 0.10.1
   camera_platform_interface:
     git:
-      url: https://github.com/RobertApikyan/camera.git
+      url: https://buildserver.qundo.de:8929/qundo-app-development/app-camera-library.git
       path: packages/camera/camera_platform_interface
+      ref: 0.10.1
   flutter:
     sdk: flutter
   flutter_plugin_android_lifecycle: ^2.0.2
