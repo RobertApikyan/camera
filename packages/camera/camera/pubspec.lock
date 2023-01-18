@@ -68,27 +68,27 @@ packages:
     dependency: "direct main"
     description:
       path: "packages/camera/camera_android"
-      ref: HEAD
-      resolved-ref: d73dae65e100ee46103ad905d968e131ef7ae582
-      url: "https://github.com/RobertApikyan/camera.git"
+      ref: "0.10.1"
+      resolved-ref: "7b57eb86e1dbe171561e8c2a4ab03e49f26106a8"
+      url: "https://buildserver.qundo.de:8929/qundo-app-development/app-camera-library.git"
     source: git
     version: "0.10.2"
   camera_avfoundation:
     dependency: "direct main"
     description:
       path: "packages/camera/camera_avfoundation"
-      ref: HEAD
-      resolved-ref: d73dae65e100ee46103ad905d968e131ef7ae582
-      url: "https://github.com/RobertApikyan/camera.git"
+      ref: "0.10.1"
+      resolved-ref: "7b57eb86e1dbe171561e8c2a4ab03e49f26106a8"
+      url: "https://buildserver.qundo.de:8929/qundo-app-development/app-camera-library.git"
     source: git
     version: "0.9.10"
   camera_platform_interface:
     dependency: "direct main"
     description:
       path: "packages/camera/camera_platform_interface"
-      ref: HEAD
-      resolved-ref: d73dae65e100ee46103ad905d968e131ef7ae582
-      url: "https://github.com/RobertApikyan/camera.git"
+      ref: "0.10.1"
+      resolved-ref: "7b57eb86e1dbe171561e8c2a4ab03e49f26106a8"
+      url: "https://buildserver.qundo.de:8929/qundo-app-development/app-camera-library.git"
     source: git
     version: "2.3.2"
   characters:
